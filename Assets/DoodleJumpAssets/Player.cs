@@ -39,6 +39,7 @@ public class Player : MonoBehaviour {
 
 		if (isGrounded && rb.velocity.y <= 0f)
 		{
+			createDust();
 			Vector2 curVelocity = rb.velocity;
 			curVelocity.y = jumpForce;
 			rb.velocity = curVelocity;
