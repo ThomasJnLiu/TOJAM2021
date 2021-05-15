@@ -14,14 +14,19 @@ public class Platform : MonoBehaviour {
 	public float speed = 5f;
 	public bool isMoving;
 	private bool _movingLeft;
+	public bool isGrounded = false;
 
 	Vector2 _startPosition;
 
 	MusicTiming _musicTiming;
+	GameObject _player;
+	public Rigidbody2D rb;
 
-    private void Start()
+	private void Start()
     {
 		_musicTiming = GameObject.FindObjectOfType<MusicTiming>();
+		_player = GameObject.FindObjectOfType<Player>().gameObject;
+		rb = _player.GetComponent<Rigidbody2D>();
 		if (isMoving)
         {
 			_movingLeft = (Random.value > 0.5f);
@@ -69,24 +74,37 @@ public class Platform : MonoBehaviour {
 			}
 
 			print(Vector2.Distance(gameObject.transform.position, leftTranslate.transform.position));
-		}
+			
+			
 		
-	
-
+		}
+/*		if (isGrounded)
+		{
+			Vector2 velocity = rb.velocity;
+			velocity.y = jumpForce;
+			rb.velocity = velocity;
+		}*/
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
+/*    void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.relativeVelocity.y <= 0f)
+		if (collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0f)
 		{
 			Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
-			if (rb != null)
-			{
-				Vector2 velocity = rb.velocity;
-				velocity.y = jumpForce;
-				rb.velocity = velocity;
-			}
+			Animator anim = collision.collider.GetComponent<Animator>();
+			anim.Play("Jump");
+			collision.collider.GetComponent<Player>().createDust();
+			isGrounded = true;
 		}
 	}
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+		if (collision.gameObject.name == "Player")
+        {
+			isGrounded = false;
+		}
+		
+	}*/
 
 }
