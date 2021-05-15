@@ -5275,7 +5275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307164325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.003, y: -0.218, z: 0}
+  m_LocalPosition: {x: 0.003, y: 1.332, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1842151975}
@@ -5369,7 +5369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437568207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.019468699, y: -1.166, z: -0.2766786}
+  m_LocalPosition: {x: -0.019468699, y: 0.38399994, z: -0.2766786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 935423652}
@@ -5410,8 +5410,8 @@ MonoBehaviour:
   platformPrefab: {fileID: 2714568310873574790, guid: 6a29fd1323e651a4c9e867fbb263bb58, type: 3}
   numberOfPlatforms: 200
   levelWidth: 3
-  minY: 0.5
-  maxY: 1.5
+  minY: 1.5
+  maxY: 2
   spriteArray:
   - {fileID: 7911139459876737251, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
   - {fileID: -477254976604553037, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
@@ -5780,7 +5780,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -5
+  m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -5814,7 +5814,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842151974}
   serializedVersion: 7
-  lengthInSec: 0.05
+  lengthInSec: 0.1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
