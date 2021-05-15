@@ -12,7 +12,7 @@ public class LevelGenerator : MonoBehaviour {
 	public float maxY = 1.5f;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 
 		Vector3 spawnPosition = new Vector3();
 

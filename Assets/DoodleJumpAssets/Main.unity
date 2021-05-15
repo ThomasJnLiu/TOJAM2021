@@ -5117,7 +5117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4316663032741038, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.385
+      value: -1.06
       objectReference: {fileID: 0}
     - target: {fileID: 4316663032741038, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5182,7 +5182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111696693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.016, y: -0.538, z: 0}
+  m_LocalPosition: {x: 0.016, y: -0.525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1307164327}
@@ -5361,7 +5361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437568207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.019468699, y: -1.3569999, z: -0.2766786}
+  m_LocalPosition: {x: -0.019468699, y: -1.166, z: -0.2766786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 935423652}
@@ -5509,6 +5509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firstBeatDrop: 0
+  _loadTime: 1
   firstBeatHasDropped: 0
 --- !u!4 &1632231497
 Transform:
