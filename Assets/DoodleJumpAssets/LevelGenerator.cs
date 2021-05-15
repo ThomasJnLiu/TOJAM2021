@@ -11,6 +11,9 @@ public class LevelGenerator : MonoBehaviour {
 	public float minY = .2f;
 	public float maxY = 1.5f;
 
+	[SerializeField]
+	Sprite[] spriteArray;
+
 	// Use this for initialization
 	void Awake () {
 
@@ -20,7 +23,30 @@ public class LevelGenerator : MonoBehaviour {
 		{
 			spawnPosition.y += Random.Range(minY, maxY);
 			spawnPosition.x = Random.Range(-levelWidth, levelWidth);
-			Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+			GameObject tmp = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+			int randInd = Random.Range(0, 3);
+			if (randInd == 0)
+			{
+				Vector2[] points = new Vector2[2];
+				points[0] = new Vector2(-1.2f, 0);
+				points[1] = new Vector2(1.2f, 0);
+				tmp.GetComponentInChildren<EdgeCollider2D>().points = points;
+			}
+			else if (randInd == 1)
+			{
+				Vector2[] points = new Vector2[2];
+				points[0] = new Vector2(-0.9f, 0);
+				points[1] = new Vector2(0.9f, 0);
+				tmp.GetComponentInChildren<EdgeCollider2D>().points = points;
+			}
+			else if (randInd == 2)
+            {
+				Vector2[] points = new Vector2[2];
+				points[0] = new Vector2(-1.2f, 0);
+				points[1] = new Vector2(1.4f, 0);
+				tmp.GetComponentInChildren<EdgeCollider2D>().points = points;
+			}
+			tmp.GetComponentInChildren<SpriteRenderer>().sprite = spriteArray[randInd];
 		}
 	}
 }

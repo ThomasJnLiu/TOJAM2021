@@ -40,6 +40,8 @@ public class Player : MonoBehaviour {
 		if (isGrounded && rb.velocity.y <= 0f)
 		{
 			createDust();
+			Animator anim = gameObject.GetComponent<Animator>();
+			anim.Play("Jump");
 			Vector2 curVelocity = rb.velocity;
 			curVelocity.y = jumpForce;
 			rb.velocity = curVelocity;

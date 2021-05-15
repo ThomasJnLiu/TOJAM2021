@@ -144,8 +144,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0.14}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.57, y: 0}
-  - {x: 0.57, y: 0}
+  - {x: -4, y: 0}
+  - {x: 4, y: 0}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -5155,6 +5155,14 @@ PrefabInstance:
       propertyPath: rightTranslate
       value: 
       objectReference: {fileID: 557240644}
+    - target: {fileID: 212066841988524164, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8287873616420496286, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
+    - target: {fileID: 212066841988524164, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
@@ -5247,7 +5255,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2273262987894464175, guid: 29c64f1b1ed9e4847a7cd25aa9266e97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5404,6 +5412,10 @@ MonoBehaviour:
   levelWidth: 3
   minY: 0.5
   maxY: 1.5
+  spriteArray:
+  - {fileID: 7911139459876737251, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
+  - {fileID: -477254976604553037, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
+  - {fileID: 5291327898690728900, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
 --- !u!4 &1547923884
 Transform:
   m_ObjectHideFlags: 0
