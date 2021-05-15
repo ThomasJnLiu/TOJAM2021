@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!68 &5580196607132896548
+--- !u!68 &8465732298942987022
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11,9 +11,9 @@ EdgeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.14}
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.57, y: 0}
@@ -344,8 +344,7 @@ PrefabInstance:
       propertyPath: timeToReachTarget
       value: 1.0714285
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 68748783736311966, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
 --- !u!1 &2714048912514811790 stripped
 GameObject:

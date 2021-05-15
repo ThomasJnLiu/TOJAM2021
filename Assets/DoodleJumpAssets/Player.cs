@@ -36,16 +36,18 @@ public class Player : MonoBehaviour {
         {
 			gameObject.GetComponent<Animator>().SetBool("moving", false);
 		}
-	}
 
-	void FixedUpdate()
-	{
 		if (isGrounded && rb.velocity.y <= 0f)
-        {
+		{
 			Vector2 curVelocity = rb.velocity;
 			curVelocity.y = jumpForce;
 			rb.velocity = curVelocity;
 		}
+		
+	}
+
+	void FixedUpdate()
+	{
 		Vector2 velocity = rb.velocity;
 		velocity.x = movement;
 		rb.velocity = velocity;
