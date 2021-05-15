@@ -11,6 +11,10 @@ public class AudioController : MonoBehaviour
     {
         _audioSource = gameObject.GetComponent<AudioSource>();
         _audioSource.time = time;
+    }
+
+    public void StartMusic()
+    {
         _audioSource.Play();
     }
 

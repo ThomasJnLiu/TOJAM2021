@@ -16,8 +16,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0.14}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.57, y: 0}
-  - {x: 0.57, y: 0}
+  - {x: -1.2, y: 0}
+  - {x: 1.2, y: 0}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -344,6 +344,10 @@ PrefabInstance:
       propertyPath: timeToReachTarget
       value: 1.0714285
       objectReference: {fileID: 0}
+    - target: {fileID: 212066841988524164, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7911139459876737251, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 829cbdee05a7bd84cbba53738ada8e4c, type: 3}
 --- !u!1 &2714048912514811790 stripped
