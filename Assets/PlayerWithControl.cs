@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerWithControl : MonoBehaviour
 {
 
+
 	public List<AudioClip> soundEffects;
 	public float movementSpeed = 10f;
 	public float jumpForce = 10f;
@@ -24,9 +25,12 @@ public class PlayerWithControl : MonoBehaviour
 	Animator anim;
 	SquashAndStretch squash;
 
+	bool playGreenEnemyTrack, playRedEnemyTrack, playFinalSection;
+
 	// Use this for initialization
 	void Start()
 	{
+		
 		anim = gameObject.GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 		squash = gameObject.GetComponent<SquashAndStretch>();
@@ -35,6 +39,7 @@ public class PlayerWithControl : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+
 		// Create sphere and check if it collides with the ground layer.
 		/*isGrounded = (Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundMask) != null);*/
 		movement = Input.GetAxisRaw("Horizontal") * movementSpeed;
@@ -71,6 +76,24 @@ public class PlayerWithControl : MonoBehaviour
 		if(isGrounded){
 			anim.SetBool("falling", false);
 		}
+
+		// Play guitar in FMOD
+		EasyEvent newEvent = GameObject.FindObjectOfType<AudioManager>().GetComponent<AudioManager>().myAudioEvent;
+        if (playGreenEnemyTrack == true)
+        {
+			newEvent.setParamaterByName("Enemy 1", 1f);
+		}
+		// Play horn in FMOD
+		if (playRedEnemyTrack == true)
+		{
+			newEvent.setParamaterByName("Enemy 2", 1f);
+		}
+
+		// Play final section in FMOD
+		if (playFinalSection == true)
+        {
+			newEvent.setParamaterByName("Level", 2f);
+		}
 	}
 
 	private void OnCollisionStay2D(Collision2D collision)
@@ -79,6 +102,23 @@ public class PlayerWithControl : MonoBehaviour
 		{
 			isGrounded = true;
 			gameObject.transform.SetParent(collision.gameObject.transform);
+            if (!playGreenEnemyTrack && collision.gameObject.GetComponent<Platform>().isGreenEnemyPlatform)
+            {
+                print("playGuitar!");
+                playGreenEnemyTrack = true;
+            }
+
+			if (!playRedEnemyTrack && collision.gameObject.GetComponent<Platform>().isRedEnemyPlatform)
+			{
+				print("playHorn!");
+				playRedEnemyTrack = true;
+			}
+
+			if (!playFinalSection && collision.gameObject.GetComponent<Platform>().isLastSectionPlatform)
+			{
+				print("playFinal!!");
+				playFinalSection = true;
+			}
 		}
 	}
 

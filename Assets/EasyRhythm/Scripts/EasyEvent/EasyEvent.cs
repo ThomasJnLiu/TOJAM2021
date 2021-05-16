@@ -212,6 +212,11 @@ public class EasyEvent
         eventInstance.start();
     }
 
+    public void setParamaterByName(String param, float val)
+    {
+        eventInstance.setParameterByName(param, val);
+    }
+
     public void SetPaused(bool paused)
     {
         eventInstance.setPaused(paused);

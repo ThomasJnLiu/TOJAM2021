@@ -25,6 +25,19 @@ public class Platform : MonoBehaviour, IEasyListener
 	GameObject _player;
 	public Rigidbody2D rb;
 
+
+	// If a player lands on a 'isGreenEnemyPlatform', start FMOD guitar track
+	// Set this value in Level generator
+	public bool isGreenEnemyPlatform = false;
+
+	// If a player lands on a 'isRedEnemyPlatform', start FMOD horn track
+	// Set this value in Level generator
+	public bool isRedEnemyPlatform = false;
+
+	// If a player lands on a 'isLastSectionPlatform', start FMOD final section track
+	// Set this value in Level generator
+	public bool isLastSectionPlatform = false;
+
 	public void OnBeat(EasyEvent audioEvent)
 	{
 		// Resets the cube animation on beats 1 and 3
