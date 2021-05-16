@@ -5481,24 +5481,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307164325}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2db37ce94c489ca4382b8e4096a4f77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffects:
-  - {fileID: 8300000, guid: 39551c446e9612e4c842384fb7194741, type: 3}
-  - {fileID: 8300000, guid: c9ff9e29db38276488b1ff16d99cc9bd, type: 3}
-  - {fileID: 8300000, guid: 3de6759f5e1c45041a0c5ea2ddc31918, type: 3}
-  movementSpeed: 10
+  - {fileID: 8300000, guid: 1c2dc6aad821e89409a2fbb6b7e0fbd7, type: 3}
+  - {fileID: 8300000, guid: 7da1bac20e816fd45bdcd4781f868e8f, type: 3}
+  - {fileID: 8300000, guid: 1698b169279d8454a81fb71c0d2a7562, type: 3}
   jumpForce: 10
   dustPS: {fileID: 1842151977}
   isGrounded: 0
   groundCheck: {fileID: 1111696694}
   groundCheckRadius: 0.2
-  groundMask:
+  enemyMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 256
 --- !u!95 &1307164331
 Animator:
   serializedVersion: 3
@@ -5748,7 +5747,7 @@ MonoBehaviour:
   platformPrefab: {fileID: 2714568310873574790, guid: 6a29fd1323e651a4c9e867fbb263bb58, type: 3}
   greenMonsterPrefab: {fileID: 1416000011199873018, guid: b1abe25dba26e3445ba164a35161e1a4, type: 3}
   redMonsterPrefab: {fileID: 1416000011199873018, guid: fe255d10fd989e84c8a553b97a2836eb, type: 3}
-  numberOfPlatforms: 20
+  numberOfPlatforms: 50
   levelWidth: 3
   minY: 1.5
   maxY: 2
@@ -5888,9 +5887,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.12}
+  m_Offset: {x: 0, y: -0.03}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.3
 --- !u!850595691 &1602056926
 LightingSettings:
   m_ObjectHideFlags: 0

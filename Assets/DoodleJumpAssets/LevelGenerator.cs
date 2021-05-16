@@ -13,10 +13,10 @@ public class LevelGenerator : MonoBehaviour {
 	public float minY = .2f;
 	public float maxY = 1.5f;
 
-	private int greenEnemySpawnRate = 4;
+	private int greenEnemySpawnRate = 2;
 	private int curGreenEnemy = 0;
 
-	private int redEnemySpawnRate = 8;
+	private int redEnemySpawnRate = 5;
 	private int curRedEnemy = 0;
 
 	[SerializeField]

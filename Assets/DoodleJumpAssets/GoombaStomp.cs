@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour {
+public class GoombaStomp : MonoBehaviour {
 
 	public List<AudioClip> soundEffects;
-	public float movementSpeed = 10f;
 	public float jumpForce = 10f;
 	public ParticleSystem dustPS;
 
 	Rigidbody2D rb;
 
-	float movement = 0f;
 
 	public bool isGrounded = false;
 
 	public Transform groundCheck;
 	public float groundCheckRadius = 0.4f;
-	public LayerMask groundMask;
+	public LayerMask enemyMask;
 
 	// Use this for initialization
 	void Start () {
@@ -28,18 +26,22 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Create sphere and check if it collides with the ground layer.
-		isGrounded = (Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundMask) != null);
-		movement = Input.GetAxisRaw("Horizontal") * movementSpeed;
-		if (movement != 0)
-        {
-			gameObject.GetComponent<Animator>().SetBool("moving", true);
-        } else
-        {
-			gameObject.GetComponent<Animator>().SetBool("moving", false);
-		}
-
+		Collider2D col = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, enemyMask);
+		isGrounded = col != null;
 		if (isGrounded && rb.velocity.y <= 0f)
 		{
+			col.gameObject.transform.parent.GetComponentInChildren<SpriteRenderer>().enabled = false;
+			col.gameObject.transform.parent.GetComponentInChildren<CircleCollider2D>().enabled = false;
+			if (col.gameObject.transform.parent.GetComponentInChildren<GreenEnemy>() != null)
+            {
+				col.gameObject.transform.parent.GetComponentInChildren<GreenEnemy>().enabled = false;
+			}
+			if (col.gameObject.transform.parent.GetComponentInChildren<RedEnemy>() != null)
+			{
+				col.gameObject.transform.parent.GetComponentInChildren<RedEnemy>().enabled = false;
+			}
+			col.gameObject.transform.parent.GetComponentInChildren<EdgeCollider2D>().enabled = false;
+			col.gameObject.transform.parent.GetComponentInChildren<PlatformEffector2D>().enabled = false;
 			Jump();
 		}
 		
@@ -54,8 +56,8 @@ public class Player : MonoBehaviour {
 		gameObject.GetComponent<AudioSource>().Play();
 
 
-				// Visualize Jump
-				createDust();
+	    // Visualize Jump
+		createDust();
 		Animator anim = gameObject.GetComponent<Animator>();
 		SquashAndStretch squash = gameObject.GetComponent<SquashAndStretch>();
 		squash.SetToSquash(.1f);
@@ -63,18 +65,8 @@ public class Player : MonoBehaviour {
 
 
 		// Apply Jump
-		Vector2 curVelocity = rb.velocity;
-		curVelocity.y = jumpForce;
-		rb.velocity = curVelocity;
+		rb.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
 	}
-
-	void FixedUpdate()
-	{
-		Vector2 velocity = rb.velocity;
-		velocity.x = movement;
-		rb.velocity = velocity;
-	}
-
 	public void createDust()
     {
 		dustPS.Play();

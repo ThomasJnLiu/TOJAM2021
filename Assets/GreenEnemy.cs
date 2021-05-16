@@ -14,7 +14,10 @@ public class GreenEnemy : MonoBehaviour, IEasyListener
     {
         if (audioEvent.CurrentBeat == 1)
         {
-            StartCoroutine(MoveEnemy(audioEvent));
+			if (gameObject.activeSelf)
+            {
+				StartCoroutine(MoveEnemy(audioEvent));
+			}
         }
     }
     // Start is called before the first frame update

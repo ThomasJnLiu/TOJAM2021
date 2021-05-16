@@ -58,7 +58,7 @@ public class Platform : MonoBehaviour, IEasyListener
 
 	private void Start()
 	{
-		_player = GameObject.FindObjectOfType<Player>().gameObject;
+		_player = GameObject.FindObjectOfType<GoombaStomp>().gameObject;
 		rb = _player.GetComponent<Rigidbody2D>();
 		if (isMoving)
 		{
