@@ -39,11 +39,11 @@ public class LevelGenerator : MonoBehaviour {
 			greenMonsterPosition.x = -spawnPosition.x;
 			if (spawnPosition.x > 0)
             {
-				greenMonsterPosition.x -= 1f;
+				greenMonsterPosition.x -= 1.5f;
 
 			} else
             {
-				greenMonsterPosition.x += 1f;
+				greenMonsterPosition.x += 1.5f;
 			}
 			
 			

@@ -5665,6 +5665,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  hurtTimer: 0.5
 --- !u!114 &1307164335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5806,7 +5807,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547923882}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 249114b86001566418ea12e7e477288f, type: 2}
   m_IsTrigger: 0
@@ -5828,7 +5829,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547923882}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 249114b86001566418ea12e7e477288f, type: 2}
   m_IsTrigger: 0

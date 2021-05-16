@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerWithControl : MonoBehaviour
@@ -21,19 +22,25 @@ public class PlayerWithControl : MonoBehaviour
 	public Transform groundCheck;
 	public float groundCheckRadius = 0.4f;
 	public LayerMask groundMask;
+	bool isHurt = false;
+
+	public float hurtTimer = .5f;
 
 	Animator anim;
 	SquashAndStretch squash;
 
 	bool playGreenEnemyTrack, playRedEnemyTrack, playFinalSection;
 
-	// Use this for initialization
+
+
+	Color ogColor;
 	void Start()
 	{
 		
 		anim = gameObject.GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 		squash = gameObject.GetComponent<SquashAndStretch>();
+		ogColor = gameObject.GetComponent<SpriteRenderer>().color;
 	}
 
 	// Update is called once per frame
@@ -60,8 +67,13 @@ public class PlayerWithControl : MonoBehaviour
 					gameObject.transform.SetParent(null);
 
 				}*/
+		Vector2 curPos = transform.position;
+		curPos.x = Mathf.Clamp(curPos.x, -4, 4);
+		curPos.y = Mathf.Clamp(curPos.y, 0, 10000f);
+		transform.position = curPos;
 
-		if (Input.GetButtonDown("Jump"))
+
+		if (Input.GetButtonDown("Jump") && !isHurt)
 		{
 			if (isGrounded && rb.velocity.y <= 0f)
 			{
@@ -96,7 +108,24 @@ public class PlayerWithControl : MonoBehaviour
 		}
 	}
 
-	private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "RedEnemy" || collision.tag == "GreenEnemy")
+        {
+			Vector2 curVelocity = rb.velocity;
+			rb.velocity = Vector2.zero;
+			rb.angularVelocity = 0f;
+			rb.Sleep();
+			Color tmp = gameObject.GetComponent<SpriteRenderer>().color;
+			tmp.a = .5f;
+			gameObject.GetComponent<SpriteRenderer>().color = tmp;
+			isHurt = true;
+			gameObject.GetComponent<BoxCollider2D>().enabled = false;
+			StartCoroutine(hurt(hurtTimer));
+		}
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
 	{
 		if (collision.gameObject.tag == "MovingPlatform" && rb.velocity.y <= 0f || collision.gameObject.tag == "FirstPlatform" && rb.velocity.y <= 0f)
 		{
@@ -128,7 +157,16 @@ public class PlayerWithControl : MonoBehaviour
 		{
 			isGrounded = false;
 			gameObject.transform.SetParent(null);
+			
 		}
+	}
+
+	private IEnumerator hurt(float hurtTime)
+    {
+		yield return new WaitForSecondsRealtime(hurtTime);
+		gameObject.GetComponent<SpriteRenderer>().color = ogColor;
+		gameObject.GetComponent<BoxCollider2D>().enabled = true;
+		isHurt = false;
 	}
 
 	void Jump()
@@ -156,9 +194,12 @@ public class PlayerWithControl : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		
 		Vector2 velocity = rb.velocity;
 		velocity.x = movement;
 		rb.velocity = velocity;
+
+		
 	}
 
 	public void createDust()
