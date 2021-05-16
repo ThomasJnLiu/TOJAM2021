@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{52bfc7ae-3105-4f20-8049-83b91362a476}">
+		<property name="name">
+			<value>Enemy 2</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1df5621c-177f-42d4-a6fb-d23fabd9303e}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{81f5299c-cda8-4fb6-b595-7492686fd365}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{81f5299c-cda8-4fb6-b595-7492686fd365}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

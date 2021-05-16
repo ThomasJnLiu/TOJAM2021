@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{94210003-34c2-4ab7-b59b-11a0dcb6edb3}">
+		<property name="assetPath">
+			<value>Bed Track - Section 3.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>47.213104166666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{630b0615-0e0b-4e43-af79-308e863c54ad}</destination>
+		</relationship>
+	</object>
+</objects>
