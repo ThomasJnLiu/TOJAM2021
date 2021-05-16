@@ -27,7 +27,6 @@ public class LevelGenerator : MonoBehaviour {
 
 		Vector3 spawnPosition = new Vector3();
 		Vector3 greenMonsterPosition = new Vector3();
-		greenMonsterPosition.y += 1;
 		Vector3 redMonsterPosition = new Vector3();
 
 		for (int i = 0; i < numberOfPlatforms; i++)
@@ -35,13 +34,13 @@ public class LevelGenerator : MonoBehaviour {
 			spawnPosition.y += Random.Range(minY, maxY);
 			spawnPosition.x = Random.Range(-levelWidth, levelWidth);
 
-			greenMonsterPosition.y += Random.Range(minY, maxY);
+			greenMonsterPosition.y = spawnPosition.y;
 			// Guarentee green monster is at somewhat faraway from same platform level
 			greenMonsterPosition.x = -spawnPosition.x;
 			
 
 			redMonsterPosition.y += Random.Range(minY, maxY);
-			redMonsterPosition.x = (Random.Range(0f, 1f) > 0.5f) ? levelWidth - 0.4f : -levelWidth + 0.4f;
+			redMonsterPosition.x = (greenMonsterPosition.x < 0) ? levelWidth + 1.2f  : -levelWidth - 1.2f;
 
 			GameObject tmp = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
 			int randInd = Random.Range(0, 3);

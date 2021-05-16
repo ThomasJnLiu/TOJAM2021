@@ -20,6 +20,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-7366482019217122660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Infinite Loop/Enemy 1
+  m_EditorClassIdentifier: 
+  Name: Enemy 1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-6409810507047836872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,11 +76,31 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637567239244217345
+  lastModified: 637567766031324330
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 892
+  Exists: 1
+--- !u!114 &-3739833099419479816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Infinite Loop/Level
+  m_EditorClassIdentifier: 
+  Name: Level
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-2874707946605316839
 MonoBehaviour:
@@ -142,9 +182,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7594369124199756976}
-  - {fileID: -2874707946605316839}
-  - {fileID: 7412130520537588388}
+  - {fileID: -3739833099419479816}
+  - {fileID: -7366482019217122660}
+  - {fileID: 923638387906975425}
   MinDistance: 0
   MaxDistance: 0
   Length: 155409
@@ -170,8 +210,28 @@ MonoBehaviour:
   - {fileID: 6225775815040287039}
   StringsBanks:
   - {fileID: -5907289263674263562}
-  stringsBankWriteTime: 637567239244217345
+  stringsBankWriteTime: 637567766031324330
   cacheVersion: 6
+--- !u!114 &923638387906975425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Infinite Loop/Enemy 2
+  m_EditorClassIdentifier: 
+  Name: Enemy 2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1142041815016874975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +353,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637567239244187204
+  lastModified: 637567766031304314
   LoadResult: 0
   FileSizes: []
   Exists: 1

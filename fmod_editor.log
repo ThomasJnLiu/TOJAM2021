@@ -7,13 +7,156 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002A7E1B49AB8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002A8B77D2BE8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::createSound                     : filename = FMODAssets\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x8000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 000002A8AB454EA8 : node = 000002A83203A070
+[LOG] SystemI::createSound                     : add node to async list : head = 000002A8A76914C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002A8AB454EA8
+[LOG] SystemI::createSound                     : filename = FMODAssets\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='FMODAssets\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000002A8AB456D08 : node = 000002A832037C30
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3333312
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002A8A76914C8.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 7072
+[LOG] SystemI::createSound                     :     filename = FMODAssets\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002A83203A180
+[LOG] SystemI::createSound                     :     setdata soundi = 000002A8AB453048 : node = 000002A832037D70
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002A8A76914C8.  list count = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Enemy - Horns', format=5, channels=2, frequency=48000, lengthbytes=419584, lengthpcm=1510820, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988464.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFC, Stack Size: 49152, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002A8AB454EA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002A8AB456D08
+[LOG] SystemI::createSoundInternal             :     Create name='FMODAssets\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3333312
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 7072
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002A832037D40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Enemy - Guitar 1', format=5, channels=2, frequency=48000, lengthbytes=382464, lengthpcm=1510820, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988525.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002A8AB456D08
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002A8AB453048
+[LOG] SystemI::createSoundInternal             :     Create name='FMODAssets\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3333312
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 7072
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002A832037E80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Bed Track - Section 1', format=5, channels=2, frequency=48000, lengthbytes=396512, lengthpcm=1510819, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988495.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002A8AB453048
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002A831A84AE8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002A831A84AE8
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002A831A84428
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002A831A84428
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::createSound                     : filename = FMODAssets\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002A8AAE26DA8 : node = 000002A8A9202910
+[LOG] SystemI::createSound                     : add node to async list : head = 000002A8A76914C8.  list count = 0
+[LOG] SystemI::createSound                     : filename = FMODAssets\Build\Desktop/Master.bank : mode 02010082
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002A8AAE26DA8
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     Create name='FMODAssets\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     setdata soundi = 000002A8AAE272B8 : node = 000002A8A9202A50
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002A8A76914C8.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3333312
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 7072
+[LOG] SystemI::createSound                     :     filename = FMODAssets\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002A8A9202A20
+[LOG] SystemI::createSound                     :     setdata soundi = 000002A8A9C9FC48 : node = 000002A8316356E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002A8A76914C8.  list count = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Enemy - Guitar 1 - Section 3', format=5, channels=2, frequency=48000, lengthbytes=572224, lengthpcm=2266229, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988464.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002A8AAE26DA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002A8AAE272B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMODAssets\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3333312
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 7072
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002A8A9202B60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Enemy - Guitar 2 - Section 3', format=5, channels=2, frequency=48000, lengthbytes=563808, lengthpcm=2266229, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988617.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002A8AAE272B8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002A8A9C9FC48
+[LOG] SystemI::createSoundInternal             :     Create name='FMODAssets\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3333312
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 7072
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002A8316357F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Bed Track - Section 3', format=5, channels=2, frequency=48000, lengthbytes=615584, lengthpcm=2266229, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988464.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002A8A9C9FC48
+[LOG] SoundI::release                          : Bed Track - Section 1 (000002A8AB453048)
+[LOG] SoundI::release                          :     Bed Track - Section 1 (000002A8A84C30F8)
+[LOG] SoundI::release                          :     Bed Track - Section 1 (000002A831A84C98)
+[LOG] SoundI::release                          : Enemy - Guitar 1 (000002A8AB456D08)
+[LOG] SoundI::release                          :     Enemy - Guitar 1 (000002A8A84C2DB8)
+[LOG] SoundI::release                          :     Enemy - Guitar 1 (000002A831A84AE8)
+[LOG] SoundI::release                          : Enemy - Horns (000002A8AB454EA8)
+[LOG] SoundI::release                          :     Enemy - Horns (000002A8A84C5E78)
+[LOG] SoundI::release                          :     Enemy - Horns (000002A831A84428)
+[LOG] SoundI::release                          : Bed Track - Section 3 (000002A8A9C9FC48)
+[LOG] SoundI::release                          :     Bed Track - Section 3 (000002A8ADD48E08)
+[LOG] SoundI::release                          :     Bed Track - Section 3 (000002A831916838)
+[LOG] SoundI::release                          : Enemy - Guitar 2 - Section 3 (000002A8AAE272B8)
+[LOG] SoundI::release                          :     Enemy - Guitar 2 - Section 3 (000002A8ADD48C68)
+[LOG] SoundI::release                          :     Enemy - Guitar 2 - Section 3 (000002A831916688)
+[LOG] SoundI::release                          : Enemy - Guitar 1 - Section 3 (000002A8AAE26DA8)
+[LOG] SoundI::release                          :     Enemy - Guitar 1 - Section 3 (000002A8ADD48FA8)
+[LOG] SoundI::release                          :     Enemy - Guitar 1 - Section 3 (000002A8319164D8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -21,3 +164,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
