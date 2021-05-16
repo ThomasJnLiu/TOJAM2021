@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour {
 
+	public List<AudioClip> soundEffects;
 	public float movementSpeed = 10f;
 	public float jumpForce = 10f;
 	public ParticleSystem dustPS;
@@ -39,14 +40,32 @@ public class Player : MonoBehaviour {
 
 		if (isGrounded && rb.velocity.y <= 0f)
 		{
-			createDust();
-			Animator anim = gameObject.GetComponent<Animator>();
-			anim.Play("Jump");
-			Vector2 curVelocity = rb.velocity;
-			curVelocity.y = jumpForce;
-			rb.velocity = curVelocity;
+			Jump();
 		}
 		
+	}
+
+	void Jump()
+    {
+		// Play Sound
+		gameObject.GetComponent<AudioSource>().clip = soundEffects[Random.Range(0, 3)];
+		/*		gameObject.GetComponent<AudioSource>().volume = Random.Range(0.05f, 0.1f);
+				gameObject.GetComponent<AudioSource>().pitch = Random.Range(0.5f, 0.8f);*/
+		gameObject.GetComponent<AudioSource>().Play();
+
+
+				// Visualize Jump
+				createDust();
+		Animator anim = gameObject.GetComponent<Animator>();
+		SquashAndStretch squash = gameObject.GetComponent<SquashAndStretch>();
+		squash.SetToSquash(.1f);
+		anim.Play("Jump");
+
+
+		// Apply Jump
+		Vector2 curVelocity = rb.velocity;
+		curVelocity.y = jumpForce;
+		rb.velocity = curVelocity;
 	}
 
 	void FixedUpdate()
