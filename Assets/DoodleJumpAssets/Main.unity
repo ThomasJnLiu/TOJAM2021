@@ -5632,8 +5632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 2714568310873574790, guid: 6a29fd1323e651a4c9e867fbb263bb58, type: 3}
   greenMonsterPrefab: {fileID: 1416000011199873018, guid: b1abe25dba26e3445ba164a35161e1a4, type: 3}
-  redMonsterPrefab: {fileID: 0}
-  numberOfPlatforms: 50
+  redMonsterPrefab: {fileID: 1416000011199873018, guid: fe255d10fd989e84c8a553b97a2836eb, type: 3}
+  numberOfPlatforms: 20
   levelWidth: 3
   minY: 1.5
   maxY: 2

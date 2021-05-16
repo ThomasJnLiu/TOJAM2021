@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     // Each platform listens to the song
     GameObject[] platforms;
     GameObject[] greenEnemies;
+    GameObject[] redEnemies;
 
     [SerializeField]
     int _firstBeatDrop, _loadTime;
@@ -25,9 +26,10 @@ public class AudioManager : MonoBehaviour
     {
         platforms = GameObject.FindGameObjectsWithTag("MovingPlatform");
         greenEnemies = GameObject.FindGameObjectsWithTag("GreenEnemy");
+        redEnemies = GameObject.FindGameObjectsWithTag("RedEnemy");
         // Passes the EventReference so EasyEvent can create the FMOD Event instance
         // Passes an array of listeners through (IEasyListener) so the audio event knows which objects want to listen to the callbacks
-        
+
 
         // You could also pass in a single listener, even if it's referenced as something other than IEasyListener.
         // As long as it implements IEasyListner, it will be passed through as if it IS IEasyListener.
@@ -62,6 +64,11 @@ public class AudioManager : MonoBehaviour
         foreach (GameObject greenEnemy in greenEnemies)
         {
             myAudioEvent.AddListener(greenEnemy.GetComponent<GreenEnemy>());
+        }
+
+        foreach (GameObject redEnemy in redEnemies)
+        {
+            myAudioEvent.AddListener(redEnemy.GetComponent<RedEnemy>());
         }
     }
 

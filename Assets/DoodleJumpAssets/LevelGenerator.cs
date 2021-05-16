@@ -13,10 +13,10 @@ public class LevelGenerator : MonoBehaviour {
 	public float minY = .2f;
 	public float maxY = 1.5f;
 
-	private int greenEnemySpawnRate = 5;
+	private int greenEnemySpawnRate = 4;
 	private int curGreenEnemy = 0;
 
-	private int redEnemySpawnRate = 10;
+	private int redEnemySpawnRate = 8;
 	private int curRedEnemy = 0;
 
 	[SerializeField]
@@ -41,7 +41,7 @@ public class LevelGenerator : MonoBehaviour {
 			
 
 			redMonsterPosition.y += Random.Range(minY, maxY);
-			redMonsterPosition.x = Random.Range(-levelWidth, levelWidth);
+			redMonsterPosition.x = (Random.Range(0f, 1f) > 0.5f) ? levelWidth - 0.4f : -levelWidth + 0.4f;
 
 			GameObject tmp = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
 			int randInd = Random.Range(0, 3);
@@ -83,6 +83,11 @@ public class LevelGenerator : MonoBehaviour {
             if (i > numberOfPlatforms / 2)
             {
 				tmp.GetComponentInChildren<Platform>().isRedEnemyPlatform = true;
+				if (curRedEnemy >= redEnemySpawnRate)
+				{
+					GameObject tmpRed = Instantiate(redMonsterPrefab, redMonsterPosition, Quaternion.identity);
+					curRedEnemy = 0;
+				}
 			}
 
 			if (i == numberOfPlatforms - 1)
@@ -91,6 +96,7 @@ public class LevelGenerator : MonoBehaviour {
 			}
 
             curGreenEnemy += 1;
+			curRedEnemy += 1;
 		}
 	}
 }
