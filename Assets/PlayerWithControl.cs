@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerWithControl : MonoBehaviour
 {
 
-
+	public Canvas winScreen;
 	public List<AudioClip> soundEffects;
 	public float movementSpeed = 10f;
 	public float jumpForce = 10f;
@@ -36,7 +36,7 @@ public class PlayerWithControl : MonoBehaviour
 	Color ogColor;
 	void Start()
 	{
-		
+		winScreen.enabled = false;
 		anim = gameObject.GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 		squash = gameObject.GetComponent<SquashAndStretch>();
@@ -147,6 +147,7 @@ public class PlayerWithControl : MonoBehaviour
 			{
 				print("playFinal!!");
 				playFinalSection = true;
+				winScreen.enabled = true;
 			}
 		}
 	}
