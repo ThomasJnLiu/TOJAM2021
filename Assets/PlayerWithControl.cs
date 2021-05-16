@@ -107,9 +107,11 @@ public class PlayerWithControl : MonoBehaviour
 
 
 		// Apply Jump
-		Vector2 curVelocity = rb.velocity;
-		curVelocity.y = jumpForce;
-		rb.velocity = curVelocity;
+		// Vector2 curVelocity = rb.velocity;
+		// curVelocity.y = jumpForce;
+		// rb.velocity = curVelocity;
+		rb.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+
 	}
 
 	void FixedUpdate()
