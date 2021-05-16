@@ -22,9 +22,6 @@ public class Platform : MonoBehaviour, IEasyListener
 	private bool _movingLeft;
 	public bool isGrounded = false;
 
-	Vector2 _startPosition;
-
-	MusicTiming _musicTiming;
 	GameObject _player;
 	public Rigidbody2D rb;
 
@@ -48,7 +45,6 @@ public class Platform : MonoBehaviour, IEasyListener
 
 	private void Start()
 	{
-		_musicTiming = GameObject.FindObjectOfType<MusicTiming>();
 		_player = GameObject.FindObjectOfType<Player>().gameObject;
 		rb = _player.GetComponent<Rigidbody2D>();
 		if (isMoving)
@@ -66,7 +62,6 @@ public class Platform : MonoBehaviour, IEasyListener
 				startTranslate = leftTranslate;
 				moveTranslate = rightTranslate;
 			}
-			_startPosition = transform.position;
 		}
 
 
