@@ -21,10 +21,15 @@ public class PlayerWithControl : MonoBehaviour
 	public float groundCheckRadius = 0.4f;
 	public LayerMask groundMask;
 
+	Animator anim;
+	SquashAndStretch squash;
+
 	// Use this for initialization
 	void Start()
 	{
+		anim = gameObject.GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
+		squash = gameObject.GetComponent<SquashAndStretch>();
 	}
 
 	// Update is called once per frame
@@ -41,6 +46,7 @@ public class PlayerWithControl : MonoBehaviour
 		{
 			gameObject.GetComponent<Animator>().SetBool("moving", false);
 		}
+		FlipSprite(movement);
 		/*		if (isGrounded)
 				{
 					gameObject.transform.SetParent(Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundMask).gameObject.transform);
@@ -58,7 +64,13 @@ public class PlayerWithControl : MonoBehaviour
 			}
 		}
 
-
+		// Check if player falling, play falling animation
+		if(rb.velocity.y < 0){
+			anim.SetBool("falling", true);
+		}
+		if(isGrounded){
+			anim.SetBool("falling", false);
+		}
 	}
 
 	private void OnCollisionStay2D(Collision2D collision)
@@ -90,8 +102,6 @@ public class PlayerWithControl : MonoBehaviour
 
 		// Visualize Jump
 		createDust();
-		Animator anim = gameObject.GetComponent<Animator>();
-		SquashAndStretch squash = gameObject.GetComponent<SquashAndStretch>();
 		squash.SetToSquash(.1f);
 		anim.Play("Jump");
 
@@ -115,6 +125,15 @@ public class PlayerWithControl : MonoBehaviour
 
 	}
 
+	private void FlipSprite(float direction){
+		Debug.Log(direction);
+		if(direction > 0){
+			transform.rotation = Quaternion.Euler(0, 0, 0);
+		}else if(direction < 0){
+			transform.rotation = Quaternion.Euler(0, 180, 0);
+		}
+
+	}
 	void OnDrawGizmos()
 	{
 		Gizmos.color = Color.green;
