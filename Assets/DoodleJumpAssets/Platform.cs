@@ -38,7 +38,7 @@ public class Platform : MonoBehaviour, IEasyListener
 
 				}*/
 
-		if (audioEvent.CurrentBeat == 1 || audioEvent.CurrentBeat == 3)
+		if (audioEvent.CurrentBeat == 1 )
 		{
 			StartCoroutine(MovePlatform(audioEvent));
 		}
@@ -74,7 +74,7 @@ public class Platform : MonoBehaviour, IEasyListener
 
 	private IEnumerator MovePlatform(EasyEvent audioEvent)
 	{
-		var journeyTime = audioEvent.BeatLength();
+		var journeyTime = audioEvent.BeatLength() * 2;
 
 		float startTime = Time.time;
 
