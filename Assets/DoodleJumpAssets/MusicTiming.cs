@@ -28,7 +28,8 @@ public class MusicTiming : MonoBehaviour
 
         // Code to execute after the delay
         Time.timeScale = 1;
-        GameObject.FindObjectOfType<AudioManager>().myAudioEvent.start();
+        //GameObject.FindObjectOfType<AudioManager>().myAudioEvent.start();
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
     IEnumerator FirstBeatDrop(float time)
     {

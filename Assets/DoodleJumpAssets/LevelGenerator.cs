@@ -13,10 +13,10 @@ public class LevelGenerator : MonoBehaviour {
 	public float minY = .2f;
 	public float maxY = 1.5f;
 
-	private int greenEnemySpawnRate = 3;
+	private int greenEnemySpawnRate = 4;
 	private int curGreenEnemy = 0;
 
-	private int redEnemySpawnRate = 3;
+	private int redEnemySpawnRate = 8;
 	private int curRedEnemy = 0;
 
 	[SerializeField]
@@ -27,6 +27,7 @@ public class LevelGenerator : MonoBehaviour {
 
 		Vector3 spawnPosition = new Vector3();
 		Vector3 greenMonsterPosition = new Vector3();
+		greenMonsterPosition.y += 1;
 		Vector3 redMonsterPosition = new Vector3();
 
 		for (int i = 0; i < numberOfPlatforms; i++)
@@ -35,10 +36,12 @@ public class LevelGenerator : MonoBehaviour {
 			spawnPosition.x = Random.Range(-levelWidth, levelWidth);
 
 			greenMonsterPosition.y += Random.Range(minY, maxY);
-			greenMonsterPosition.x = Random.Range(-levelWidth, levelWidth);
+			// Guarentee green monster is at somewhat faraway from same platform level
+			greenMonsterPosition.x = -spawnPosition.x;
+			
 
 			redMonsterPosition.y += Random.Range(minY, maxY);
-			redMonsterPosition.x = Random.Range(-levelWidth, levelWidth);
+			redMonsterPosition.x = (Random.Range(0f, 1f) > 0.5f) ? levelWidth - 0.4f : -levelWidth + 0.4f;
 
 			GameObject tmp = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
 			int randInd = Random.Range(0, 3);
@@ -65,14 +68,35 @@ public class LevelGenerator : MonoBehaviour {
 			}
 			tmp.GetComponentInChildren<SpriteRenderer>().sprite = spriteArray[randInd];
 
-			// Start spawning green enemies every 3-5 platforms
-			if (i > numberOfPlatforms / 2 && curGreenEnemy >= greenEnemySpawnRate)
+			// Start spawning green enemies every 5 platforms and start guitar track in FMOD
+			if (i > numberOfPlatforms / 4)
 			{
-				GameObject tmpGreen = Instantiate(greenMonsterPrefab, greenMonsterPosition, Quaternion.identity);
-				curGreenEnemy = 0;
+				tmp.GetComponentInChildren<Platform>().isGreenEnemyPlatform = true;
+				if (curGreenEnemy >= greenEnemySpawnRate)
+                {
+					GameObject tmpGreen = Instantiate(greenMonsterPrefab, greenMonsterPosition, Quaternion.identity);
+					curGreenEnemy = 0;
+				}
+				
+			}
+            // Start spawning red enemies every 10 platforms and start guitar track in FMOD
+            if (i > numberOfPlatforms / 2)
+            {
+				tmp.GetComponentInChildren<Platform>().isRedEnemyPlatform = true;
+				if (curRedEnemy >= redEnemySpawnRate)
+				{
+					GameObject tmpRed = Instantiate(redMonsterPrefab, redMonsterPosition, Quaternion.identity);
+					curRedEnemy = 0;
+				}
 			}
 
-			curGreenEnemy += 1;
+			if (i == numberOfPlatforms - 1)
+            {
+				tmp.GetComponentInChildren<Platform>().isLastSectionPlatform = true;
+			}
+
+            curGreenEnemy += 1;
+			curRedEnemy += 1;
 		}
 	}
 }
