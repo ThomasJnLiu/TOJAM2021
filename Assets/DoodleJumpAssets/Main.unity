@@ -5723,6 +5723,8 @@ GameObject:
   - component: {fileID: 1547923884}
   - component: {fileID: 1547923883}
   - component: {fileID: 1547923885}
+  - component: {fileID: 1547923887}
+  - component: {fileID: 1547923886}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -5753,6 +5755,7 @@ MonoBehaviour:
   - {fileID: 7911139459876737251, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
   - {fileID: -477254976604553037, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
   - {fileID: 5291327898690728900, guid: 61e4137a098e2ca42a7abeeed471589e, type: 3}
+  - {fileID: 21300000, guid: a28b62ba54dcc1048a41dc995d07ef5a, type: 3}
 --- !u!4 &1547923884
 Transform:
   m_ObjectHideFlags: 0
@@ -5796,6 +5799,50 @@ PolygonCollider2D:
       - {x: -4.7, y: 200}
       - {x: -4.7, y: -1}
       - {x: 4.7, y: -1}
+--- !u!68 &1547923886
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547923882}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 249114b86001566418ea12e7e477288f, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -4.7, y: 200}
+  - {x: -4.7, y: -1}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &1547923887
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547923882}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 249114b86001566418ea12e7e477288f, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 4.7, y: 200}
+  - {x: 4.7, y: -1}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1556485733
 GameObject:
   m_ObjectHideFlags: 0
@@ -5837,7 +5884,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.12}
@@ -11019,7 +11066,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: abbcafd091e557f47b5ccd2b0feca998, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c388b097bbb303f47aa8ff4239ba7dc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.3254902}
   m_FlipX: 0
   m_FlipY: 0

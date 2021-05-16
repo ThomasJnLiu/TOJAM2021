@@ -92,13 +92,13 @@ public class PlayerWithControl : MonoBehaviour
 		// Play final section in FMOD
 		if (playFinalSection == true)
         {
-			newEvent.setParamaterByName("Level", 2f);
+			newEvent.setParamaterByName("Level", 3f);
 		}
 	}
 
 	private void OnCollisionStay2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "MovingPlatform" || collision.gameObject.tag == "FirstPlatform" && rb.velocity.y <= 0f)
+		if (collision.gameObject.tag == "MovingPlatform" && rb.velocity.y <= 0f || collision.gameObject.tag == "FirstPlatform" && rb.velocity.y <= 0f)
 		{
 			isGrounded = true;
 			gameObject.transform.SetParent(collision.gameObject.transform);
