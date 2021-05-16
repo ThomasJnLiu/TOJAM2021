@@ -28,7 +28,7 @@ public class MusicTiming : MonoBehaviour
 
         // Code to execute after the delay
         Time.timeScale = 1;
-        GameObject.FindObjectOfType<AudioController>().GetComponent<AudioController>().StartMusic();
+        GameObject.FindObjectOfType<AudioManager>().myAudioEvent.start();
     }
     IEnumerator FirstBeatDrop(float time)
     {
