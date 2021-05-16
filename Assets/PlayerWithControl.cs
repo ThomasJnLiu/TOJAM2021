@@ -170,9 +170,9 @@ public class PlayerWithControl : MonoBehaviour
 	private void FlipSprite(float direction){
 		Debug.Log(direction);
 		if(direction > 0){
-			transform.rotation = Quaternion.Euler(0, 0, 0);
+			gameObject.GetComponent<SpriteRenderer>().flipX = false;
 		}else if(direction < 0){
-			transform.rotation = Quaternion.Euler(0, 180, 0);
+			gameObject.GetComponent<SpriteRenderer>().flipX = true;
 		}
 
 	}
