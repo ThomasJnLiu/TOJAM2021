@@ -34,7 +34,7 @@ public class LevelGenerator : MonoBehaviour {
 			spawnPosition.y += Random.Range(minY, maxY);
 			spawnPosition.x = Random.Range(-levelWidth, levelWidth);
 
-			greenMonsterPosition.y = spawnPosition.y;
+			greenMonsterPosition.y = spawnPosition.y + .75f;
 			// Guarentee green monster is at somewhat faraway from same platform level
 			greenMonsterPosition.x = -spawnPosition.x;
 			if (spawnPosition.x > 0)
